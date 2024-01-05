@@ -1,0 +1,8 @@
+**/__pycache__/
+*.bat
+.git
+*.png
+*.jpg
+*.jpeg
+manage.py
+**/draft/

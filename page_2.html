@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset=utf-8">
+		<title>ESA SCADA</title>
+		<meta name="viewport" content="height=device-height, width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="./static/css/styles.css">
+		<script src="./static/js/scripts.js"></script>
+		<script>
+			function changeFill(cell_id) {
+				cell = document.getElementById(cell_id);
+				if (cell.href.baseVal === '#line_cell_off') {
+					cell.href.baseVal = '#line_cell';
+				}
+				else {
+					cell.href.baseVal = '#line_cell_off';
+				};
+			};
+		</script>
+	</head>
+	<body class="cheme" onresize="svgScale();" onload="svgScale();">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-8">
+				<form id="navigation">
+					<button buttontype="submit" class="btn btn-basic" formmethod="get" formaction="page_1">Обзорная</button>
+					<button buttontype="submit" class="btn btn-basic" disabled>РУ-10 кВ</button>
+					<button buttontype="submit" class="btn btn-basic" formmethod="get" formaction="page_3">РУ-110 кВ</button>
+					<button buttontype="submit" class="btn btn-basic" formmethod="get" formaction="page_4">Тревоги</button>
+					<button buttontype="submit" class="btn btn-basic" formmethod="get" formaction="page_5">График</button>
+				</form>
+			</div>
+			<div class="col-sm-2">
+				<p style="font-size: 1.2em">РУ-10 кВ</p>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid">
+		<svg id="switchgear_10" class="switchgear" xmlns="http://www.w3.org/2000/svg"  width="1832" height="1008" viewBox="-1 -1 1834 1010" version="1.1">
+			<defs>
+				<symbol id="line_cell" stroke="green" fill="none" stroke-width="0.5">
+					<circle cx="3" cy="63" r="3"/>
+					<line x1="11" y1="14" x2="11" y2="2"/>
+					<line x1="11" y1="14" x2="14" y2="10" />
+					<line x1="8" y1="10" x2="11" y2="14" />
+					<line x1="11" y1="16" x2="14" y2="12" />
+					<line x1="8" y1="12" x2="11" y2="16" />
+					<circle cx="3" cy="52" r="3"/>
+					<line x1="22" y1="51" x2="23" y2="51" />
+					<line x1="22" y1="53" x2="23" y2="53" />
+					<circle cx="19" cy="52" r="3"/>
+					<line x1="6" y1="51" x2="7" y2="51" />
+					<line x1="6" y1="53" x2="7" y2="53" />
+					<line x1="11" y1="38" x2="14" y2="42" />
+					<line x1="8" y1="42" x2="11" y2="38" />
+					<line x1="11" y1="36" x2="14" y2="40" />
+					<line x1="8" y1="40" x2="11" y2="36" />
+					<line x1="11" y1="29" x2="11" y2="36" />
+					<line x1="7" y1="22" x2="11" y2="29" />
+					<line x1="12" y1="21" x2="10" y2="23" />
+					<line x1="10" y1="21" x2="12" y2="23" />
+					<rect name="switch" x="5" y="18" width="12" height="16" fill="white" fill-opacity="50%" style="cursor: pointer;"/>
+					<line x1="11" y1="22" x2="11" y2="16" />
+					<line x1="40" y1="84" x2="40" y2="86" />
+					<line x1="38" y1="83" x2="38" y2="87" />
+					<line x1="11" y1="118" x2="11" y2="100" />
+					<circle cx="19" cy="63" r="3"/>
+					<line x1="36" y1="82" x2="36" y2="88" />
+					<line x1="31" y1="85" x2="36" y2="85" />
+					<line x1="26" y1="80" x2="31" y2="85" />
+					<line x1="25" y1="83" x2="25" y2="87" />
+					<line x1="11" y1="85" x2="25" y2="85" />
+					<circle cx="11" cy="85" r="1"/>
+					<line x1="22" y1="62" x2="23" y2="62" />
+					<line x1="22" y1="64" x2="23" y2="64" />
+					<circle cx="11" cy="2" r="1"/>
+					<line x1="6" y1="62" x2="7" y2="62" />
+					<line x1="6" y1="64" x2="7" y2="64" />
+					<line x1="11" y1="122" x2="11" y2="128" />
+					<line x1="11" y1="122" x2="9" y2="118" />
+					<line x1="13" y1="118" x2="11" y2="122" />
+					<line x1="9" y1="118" x2="13" y2="118" />
+					<line x1="19" y1="47" x2="19" y2="68" />
+					<line x1="3" y1="47" x2="3" y2="68" />
+					<line x1="11" y1="38" x2="11" y2="100" />
+				</symbol>
+				<symbol id="line_cell_off" stroke="red" fill="none" stroke-width="0.5">
+					<circle cx="3" cy="63" r="3"/>
+					<line x1="11" y1="14" x2="11" y2="2"/>
+					<line x1="11" y1="14" x2="14" y2="10" />
+					<line x1="8" y1="10" x2="11" y2="14" />
+					<line x1="11" y1="16" x2="14" y2="12" />
+					<line x1="8" y1="12" x2="11" y2="16" />
+					<circle cx="3" cy="52" r="3"/>
+					<line x1="22" y1="51" x2="23" y2="51" />
+					<line x1="22" y1="53" x2="23" y2="53" />
+					<circle cx="19" cy="52" r="3"/>
+					<line x1="6" y1="51" x2="7" y2="51" />
+					<line x1="6" y1="53" x2="7" y2="53" />
+					<line x1="11" y1="38" x2="14" y2="42" />
+					<line x1="8" y1="42" x2="11" y2="38" />
+					<line x1="11" y1="36" x2="14" y2="40" />
+					<line x1="8" y1="40" x2="11" y2="36" />
+					<line x1="11" y1="29" x2="11" y2="36" />
+					<line x1="7" y1="22" x2="11" y2="29" />
+					<line x1="12" y1="21" x2="10" y2="23" />
+					<line x1="10" y1="21" x2="12" y2="23" />
+					<rect name="switch" x="5" y="18" width="12" height="16" fill="black" fill-opacity="50%" style="cursor: pointer;"/>
+					<line x1="11" y1="22" x2="11" y2="16" />
+					<line x1="40" y1="84" x2="40" y2="86" />
+					<line x1="38" y1="83" x2="38" y2="87" />
+					<line x1="11" y1="118" x2="11" y2="100" />
+					<circle cx="19" cy="63" r="3"/>
+					<line x1="36" y1="82" x2="36" y2="88" />
+					<line x1="31" y1="85" x2="36" y2="85" />
+					<line x1="26" y1="80" x2="31" y2="85" />
+					<line x1="25" y1="83" x2="25" y2="87" />
+					<line x1="11" y1="85" x2="25" y2="85" />
+					<circle cx="11" cy="85" r="1"/>
+					<line x1="22" y1="62" x2="23" y2="62" />
+					<line x1="22" y1="64" x2="23" y2="64" />
+					<circle cx="11" cy="2" r="1"/>
+					<line x1="6" y1="62" x2="7" y2="62" />
+					<line x1="6" y1="64" x2="7" y2="64" />
+					<line x1="11" y1="122" x2="11" y2="128" />
+					<line x1="11" y1="122" x2="9" y2="118" />
+					<line x1="13" y1="118" x2="11" y2="122" />
+					<line x1="9" y1="118" x2="13" y2="118" />
+					<line x1="19" y1="47" x2="19" y2="68" />
+					<line x1="3" y1="47" x2="3" y2="68" />
+					<line x1="11" y1="38" x2="11" y2="100" />
+				</symbol>
+			</defs>
+			<g stroke-width="0.5" fill="none" stroke="black" transform="scale(2)">
+				<rect x="80" y="100" width="480" height="4"/>
+				<foreignObject x="10" y="250" width="40" height="150">
+					<div class="svg_embedded" style="font-size: 50%">
+						<p>Камера №:</p>
+						<p>Тип:</p>
+						<p>Присоединение:</p>
+					</div>
+				</foreignObject>			
+				<use id="cell_01" data-type="cell" xlink:href="#line_cell" x="100" y="100" stroke="white" onclick="changeFill('cell_01');"/>
+				<foreignObject x="100" y="250" width="40" height="150">
+					<div class="svg_embedded" style="font-size: 50%">
+						<p>яч 1</p>
+						<p>63-1-08Г-1250/31,5 У3</p>
+						<p>ТП-3 яч 1</p>
+						<table>
+							<tr><td>Ток:</td><td>150 A<td></tr>
+						</table>
+					</div>
+				</foreignObject>			
+
+				<use id="cell_03" data-type="cell" xlink:href="#line_cell" x="150" y="100"/>
+				<foreignObject x="150" y="250" width="40" height="150">
+					<div class="svg_embedded" style="font-size: 50%">
+						<p>яч 3</p>
+						<p>63-1-08Г-1250/31,5 У3</p>
+						<p>ТП-5 яч 1</p>
+						<table>
+							<tr><td>Ток:</td><td>150 A<td></tr>
+						</table>
+					</div>
+				</foreignObject>			
+				<use id="cell_05" data-type="cell" xlink:href="#line_cell" x="200" y="100"/>
+				<use id="cell_07" data-type="cell" xlink:href="#line_cell" x="250" y="100"/>
+				<use id="cell_01" data-type="cell" xlink:href="#line_cell" x="300" y="100"/>
+			</g>
+		</svg>
+	</div>
+	</body>
+</html>

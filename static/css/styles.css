@@ -1,0 +1,40 @@
+.cheme {
+	background-color: #dde6eb;
+	font-weight: 500;
+	color: lightslategray;
+}
+div.svg_embedded {
+	color: #10821b;
+	font: 16px arial;
+/*	height: 100%; */
+	padding-top: 0;
+	padding-bottom: 0;
+	margin-top: 0;
+    margin-bottom: 0;
+	display: block;
+    margin-block-start: 0;
+    margin-block-end: 0;
+	word-break: break-all; 
+}
+div.text_block {
+	color: #10821b;
+	font: 16px arial;
+	height: 100%;
+	margin-block-start: 2em;
+	margin-block-end: 2em;
+	margin-inline-start: 2em;
+	margin-inline-end: 2em;
+}
+div.row_block {
+	border: 1px	solid lightslategray; 
+	border-radius: 0.5em; 
+	border-spacing: 2px; 
+	margin: 2px;
+}
+.text_summary {
+	background-color: #dde6eb;
+	font-weight: 500;
+	color: lightslategray;
+}
+
+
